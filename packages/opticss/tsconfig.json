@@ -1,0 +1,30 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": "dist",
+    "types": [
+      "@types/chai",
+      "@types/debug",
+      "@types/mocha",
+      "@types/node"
+    ],
+    "paths": {
+      "concat-with-sourcemaps": ["../types-local/concat-with-sourcemaps"],
+      "parse5": ["../../@opticss/simple-template/types-local/parse5/index.d.ts"]
+    }
+  },
+  "include": [
+    "src",
+    "test"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ],
+  "references": [
+    {"path": "../@opticss/element-analysis"},
+    {"path": "../@opticss/template-api"},
+    {"path": "../@opticss/util"}
+  ]
+}

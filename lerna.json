@@ -1,0 +1,22 @@
+{
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "packages": [
+    "packages/*",
+    "packages/@opticss/*"
+  ],
+  "command": {
+    "publish": {
+      "message": "chore(release): Publish packages.",
+      "conventionalCommits": true,
+      "sort": true
+    },
+    "bootstrap": {
+      "sort": true
+    },
+    "run": {
+      "sort": true
+    }
+  }
+}

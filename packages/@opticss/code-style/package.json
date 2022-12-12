@@ -1,0 +1,55 @@
+{
+  "name": "@opticss/code-style",
+  "author": "Chris Eppstein",
+  "description": "Configuration and tools to manage the code style of css-blocks.",
+  "license": "BSD-2-Clause",
+  "version": "0.6.0",
+  "main": "configs/tslint.interactive.json",
+  "readme": "README.md",
+  "keywords": [
+    "tslint",
+    "tslint-plugin"
+  ],
+  "types": "dist",
+  "scripts": {
+    "compile": "which tsc && tsc --version && tsc --build",
+    "pretest": "yarn run compile",
+    "which": "echo $PATH",
+    "test": "tslint --test test/rules/*/*",
+    "debug": "echo `pwd` && node --inspect-brk=9229 tslint --test test/rules/*/*",
+    "posttest": "yarn run lint",
+    "lint": "tslint -t msbuild -p . -c tslint.cli.json",
+    "lintall": "tslint -t msbuild -p . -c tslint.release.json",
+    "lintfix": "tslint -t msbuild -p . --fix -c tslint.cli.json",
+    "prepublishOnly": "yarn run compile && yarn run lintall"
+  },
+  "bugs": {
+    "url": "https://github.com/linkedin/opticss/issues?q=is%3Aopen+is%3Aissue+label%3Apkg%3Acode-style"
+  },
+  "repository": {
+    "url": "https://github.com/linkedin/opticss.git",
+    "type": "git"
+  },
+  "homepage": "https://github.com/linkedin/opticss/tree/master/packages/%40opticss/code-style",
+  "engines": {
+    "node": "6.* || 8.* || >= 10.*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "tslint": "^5.10.0",
+    "typescript": "~3.4.4"
+  },
+  "files": [
+    "dist",
+    "configs",
+    "*.md",
+    "test"
+  ],
+  "gitHead": "ef310cb1b10dbc90cae4f859da146863f99d940b",
+  "toolchain": {
+    "node": "10.15.3",
+    "yarn": "1.15.2"
+  }
+}

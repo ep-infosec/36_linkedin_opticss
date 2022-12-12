@@ -1,0 +1,56 @@
+{
+	"folders": [
+		{
+			"path": "packages/@opticss/attr-analysis-dsl"
+		},
+		{
+			"path": "packages/@opticss/demo-app"
+		},
+		{
+			"path": "packages/@opticss/element-analysis"
+		},
+		{
+			"path": "packages/opticss"
+		},
+		{
+			"path": "packages/resolve-cascade"
+		},
+		{
+			"path": "packages/@opticss/simple-template"
+		},
+		{
+			"path": "packages/@opticss/template-api"
+		},
+		{
+			"path": "packages/@opticss/util"
+		},
+		{
+			"path": "packages/@opticss/code-style"
+		},
+		{
+			"path": "docs"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"cSpell.ignorePaths": [
+			"**/node_modules/**",
+			"**/vscode-extension/**",
+			"**/.git/**",
+			".vscode",
+			"typings",
+			"**/*.json"
+		],
+		"typescript.tsdk": "opticss/node_modules/typescript/lib",
+		"cSpell.words": [
+			"Opti",
+			"stylesheet",
+			"unoptimized"
+		],
+		"files.exclude": {
+			"**/dist": true
+		}
+	}
+}

@@ -1,0 +1,35 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "lib": [ "es2016", "dom" ],
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "removeComments": false,
+    "outDir": "dist",
+    "baseUrl": "dist",
+    "types": [
+      "@types/chai",
+      "@types/node",
+      "@types/mocha"
+    ],
+    "paths": {
+      "codemirror/*": [ "../types-local/codemirror" ],
+      "parse5": ["../types-local/parse5/index.d.ts"],
+      "parse5-sax-parser": ["../types-local/parse5-sax-parser/index.d.ts"]
+    }
+  },
+  "include": [
+    "src",
+    "test"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ],
+  "references": [
+    {"path": "../simple-template"},
+    {"path": "../../opticss"}
+  ]
+}

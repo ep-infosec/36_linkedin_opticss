@@ -1,0 +1,3 @@
+{
+  "extends": "@opticss/code-style/configs/tslint.interactive.json"
+}

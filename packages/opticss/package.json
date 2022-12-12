@@ -1,0 +1,82 @@
+{
+  "name": "opticss",
+  "version": "0.9.0",
+  "description": "A CSS Optimizer",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "compile": "tsc --build",
+    "pretest": "yarn run compile",
+    "posttest": "yarn run lint",
+    "prepublishOnly": "yarn run compile && yarn run lintall",
+    "lint": "tslint -t msbuild --project tsconfig.json -c tslint.cli.json",
+    "lintall": "tslint -t msbuild --project tsconfig.json -c tslint.release.json",
+    "lintfix": "tslint -t msbuild --project tsconfig.json -c tslint.cli.json --fix",
+    "test": "mocha dist/test/**/*.js --opts test/mocha.opts -i --grep Integration",
+    "integration": "yarn run pretest && mocha dist/test --opts test/mocha.opts --grep Integration",
+    "coverage": "istanbul cover -i \"dist/src/**/*.js\" --dir ./build/coverage _mocha -- dist/test --opts test/mocha.opts",
+    "remap": "remap-istanbul -i build/coverage/coverage.json -o coverage -t html",
+    "docs": "typedoc --out ./docs ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linkedin/opticss.git"
+  },
+  "keywords": [
+    "css",
+    "optimizer"
+  ],
+  "author": "Chris Eppstein",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/linkedin/opticss/issues"
+  },
+  "types": "dist/src/index.d.ts",
+  "homepage": "https://github.com/linkedin/opticss#readme",
+  "engines": {
+    "node": "6.* || 8.* || >= 10.*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@opticss/element-analysis": "^0.6.2",
+    "@opticss/template-api": "^0.7.0",
+    "@opticss/util": "^0.7.0",
+    "@types/debug": "4.1.4",
+    "concat-with-sourcemaps": "^1.0.4",
+    "css-property-parser": "^1.0.5",
+    "debug": "^4.1.1",
+    "object.values": "^1.0.4",
+    "postcss": "^7.0.14",
+    "postcss-selector-parser": "^6.0.2",
+    "source-map": "^0.7.3",
+    "source-map-support": "^0.5.3",
+    "specificity": "^0.4.1",
+    "typescript-collections": "^1.2.5",
+    "typescript-memoize": "^1.0.0-alpha.3"
+  },
+  "devDependencies": {
+    "@opticss/code-style": "^0.6.0",
+    "@opticss/simple-template": "^0.6.4",
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.13.8",
+    "@types/random-js": "^1.0.30",
+    "chai": "^4.1.2",
+    "css-size": "^4.0.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.1.4",
+    "mocha-typescript": "^1.1.9",
+    "random-js": "^2.0.0",
+    "remap-istanbul": "^0.13.0",
+    "resolve-cascade": "^0.6.2",
+    "tslint": "^5.10.0",
+    "typedoc": "^0.15.0-0",
+    "typescript": "~3.4.4"
+  },
+  "volta": {
+    "node": "10.15.3",
+    "yarn": "1.15.2"
+  },
+  "gitHead": "ef310cb1b10dbc90cae4f859da146863f99d940b"
+}

@@ -1,0 +1,22 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": "dist",
+    "types": [
+      "@types/node"
+    ]
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "dist",
+    "test/build",
+    "node_modules"
+  ],
+  "references": [
+    {"path": "../attr-analysis-dsl"},
+    {"path": "../code-style"}
+  ]
+}

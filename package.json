@@ -1,0 +1,40 @@
+{
+  "private": true,
+  "name": "opticss",
+  "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "@commitlint/travis-cli": "^7.5.2",
+    "husky": "^2.2.0",
+    "lerna": "^3.13.2"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "commitmsg": "commitlint --edit $GIT_PARAMS",
+    "cleandist": "lerna list --toposort -l | awk '{ print $3\"/dist\" }' | xargs rm -rf",
+    "test": "lerna run test"
+  },
+  "workspaces": [
+    "packages/*",
+    "packages/@opticss/*"
+  ],
+  "greenkeeper": {
+    "commitMessages": {
+      "addConfigFile": "chore(greenkeeper): Add Greenkeeper config file.",
+      "updateConfigFile": "chore(greenkeeper): Update Greenkeeper config file.",
+      "initialBadge": "docs(greenkeeper): Add Greenkeeper badge.",
+      "initialDependencies": "chore(greenkeeper): Update dependencies.",
+      "initialBranches": "chore(greenkeeper): Whitelist greenkeeper branches.",
+      "dependencyUpdate": "chore(greenkeeper): Update ${dependency} to version ${version}.",
+      "devDependencyUpdate": "chore(greenkeeper): Update ${dependency} to version ${version}.",
+      "dependencyPin": "chore(greenkeeper): Pin ${dependency} to ${oldVersion}.",
+      "devDependencyPin": "chore(greenkeeper): Pin ${dependency} to ${oldVersion}.",
+      "lockfileUpdate": "chore(greenkeeper): Update ${lockfilePath}.",
+      "closes": "\n\nCloses #${number}."
+    }
+  },
+  "volta": {
+    "node": "10.15.3",
+    "yarn": "1.15.2"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "name": "@opticss/element-analysis",
+  "version": "0.6.2",
+  "description": "Data structures for storing the analysis of elements.",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "compile": "tsc --build",
+    "pretest": "yarn run compile",
+    "test": "mocha dist/test --opts test/mocha.opts",
+    "posttest": "yarn run lint",
+    "prepublishOnly": "yarn run compile && yarn run lintall",
+    "lint": "tslint -t msbuild --project tsconfig.json -c tslint.cli.json",
+    "lintall": "tslint -t msbuild --project tsconfig.json -c tslint.release.json",
+    "lintfix": "tslint -t msbuild --project tsconfig.json -c tslint.cli.json --fix",
+    "coverage": "istanbul cover -i \"dist/src/**/*.js\" --dir ./build/coverage _mocha -- dist/test --opts test/mocha.opts",
+    "remap": "remap-istanbul -i build/coverage/coverage.json -o coverage -t html",
+    "docs": "typedoc --out ./docs ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linkedin/opticss.git"
+  },
+  "keywords": [
+    "css",
+    "cascade"
+  ],
+  "author": "Chris Eppstein",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/linkedin/opticss/issues?q=is%3Aopen+is%3Aissue+label%3Apkg%3Aelement-analysis"
+  },
+  "homepage": "https://github.com/linkedin/opticss/tree/master/packages/%40opticss/element-analysis",
+  "engines": {
+    "node": "6.* || 8.* || >= 10.*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@opticss/util": "^0.7.0"
+  },
+  "devDependencies": {
+    "@opticss/code-style": "^0.6.0",
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^5.2.6",
+    "chai": "^4.1.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.1.4",
+    "mocha-typescript": "^1.1.9",
+    "remap-istanbul": "^0.13.0",
+    "source-map-support": "^0.5.3",
+    "tslint": "^5.10.0",
+    "typedoc": "^0.15.0-0",
+    "typescript": "~3.4.4"
+  },
+  "gitHead": "ef310cb1b10dbc90cae4f859da146863f99d940b",
+  "toolchain": {
+    "node": "10.15.3",
+    "yarn": "1.15.2"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": "dist",
+    "types": [
+      "@types/chai",
+      "@types/node",
+      "@types/mocha"
+    ],
+    "paths": {
+      "parse5": ["../types-local/parse5/index.d.ts"],
+      "parse5-sax-parser": ["../types-local/parse5-sax-parser/index.d.ts"]
+    }
+  },
+  "include": [
+    "src",
+    "test"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ],
+  "references": [
+    {"path": "../attr-analysis-dsl"},
+    {"path": "../element-analysis"},
+    {"path": "../template-api"},
+    {"path": "../util"},
+    {"path": "../code-style"}
+  ]
+}
